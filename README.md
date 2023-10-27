@@ -1,3 +1,6 @@
+# This project fork from react-native-biometrics added detected biometrics changes for Android and iOS.
+
+
 
 # react-native-biometrics
 
