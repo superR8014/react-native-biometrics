@@ -1,5 +1,5 @@
 # This project fork from react-native-biometrics added detected biometrics changes for Android and iOS.
-
+# 2023-12-08 Fix iOS cancel biometric prompt will trow exception
 
 
 # react-native-biometrics
