@@ -152,16 +152,16 @@ RCT_EXPORT_METHOD(createSignature: (NSDictionary *)params resolver:(RCTPromiseRe
           @"signature": signatureString
         };
         resolve(result);
-      } else if (error.code == errSecUserCanceled) {
-        NSDictionary *result = @{
-          @"success": @(NO),
-          @"error": @"User cancellation"
-        };
-        resolve(result);
       } else {
         NSString *message = [NSString stringWithFormat:@"Signature error: %@", error];
         reject(@"signature_error", message, nil);
       }
+    } else if (status == errSecUserCanceled) {
+      NSDictionary *result = @{
+        @"success": @(NO),
+        @"error": @"User cancellation"
+      };
+      resolve(result);
     } else {
       NSString *message = [NSString stringWithFormat:@"Key not found: %@",[self keychainErrorToString:status]];
       reject(@"storage_error", message, nil);
